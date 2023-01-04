@@ -16,4 +16,4 @@ WORKDIR /
 
 RUN git clone --recursive https://github.com/blackmagic-debug/blackmagic.git \
     && cd blackmagic/ \
-    && make PROBE_HOST=swlink
+    && make PROBE_HOST=swlink ST_BOOTLOADER=1

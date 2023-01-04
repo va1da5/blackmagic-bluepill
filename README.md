@@ -1,6 +1,6 @@
 # Black Magic Probe Using Blue Pill
 
-The project uses Visual Studio Code [Dev containers](https://code.visualstudio.com/docs/devcontainers/containers) for building [Black Magic Probe](https://github.com/blackmagic-debug/blackmagic) binaries. 
+The project uses Visual Studio Code [Dev containers](https://code.visualstudio.com/docs/devcontainers/containers) for building [Black Magic Probe](https://github.com/blackmagic-debug/blackmagic) binaries.
 
 ## Flashing
 
@@ -21,11 +21,10 @@ st-flash --flash=128k write /blackmagic/src/blackmagic.bin 0x8002000
 | SWIO            | 34 (PA13) | SWDIO/JTMS          | SWD/JTAG | SWDIO (Serial Wire Data I/O) /TMS (Test Mode Select) |
 | A15             | 38        | JTDI                | JTAG     | TDI (Test Data In)                                   |
 | B3              | 39        | JTDO                | JTAG     | TDO (Test Data Out)                                  |
-| B4              | 40        | JNTRST              | JTAG     | TRST (Test Reset)                                    |
+| B4              | 40        | nRST/JNTRST         | JTAG     | RESET/TRST (Test Reset)                              |
 | B6              | 42        | UART1 TX            | UART     | UART RX                                              |
 | B7              | 43        | UART1 RX            | UART     | UART TX                                              |
 | A3              | 13        | UART2 RX (TRACESWO) | UART/SWD |                                                      |
-
 
 ## UDEV Rules
 
@@ -46,18 +45,15 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="1d50", ATTR{idProduct}=="6018", MODE="0666", 
 LABEL="blackmagic_rules_end"
 ```
 
-
 ## Serial
 
 ```bash
 minicom -b 115200 -8 -D /dev/ttyBmpTarg
 ```
 
-
 ## STM32 Blue Pill Pinout
 
 ![!blue pill pinout](./Bluepillpinout.gif)
-
 
 ## References
 
