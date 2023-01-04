@@ -19,6 +19,11 @@
     // "customizations": {},
     // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "devcontainer"
+    "runArgs": [
+        "--privileged",
+        "--annotation=run.oci.keep_original_groups=1"
+        // "--annotation=io.crun.keep_original_groups=1"
+    ],
     "privileged": true,
     "mounts": [
         {
